@@ -170,9 +170,10 @@ if query:
                     st.write(f"**Category**: {row['category']}")
                     st.write(f"**Similarity Score**: {row['Similarity_Score']:.4f}")
                     
+                    # if st.button("Get Item", key=f"item_{idx}", type="primary"):
+                    #     webbrowser.open(row['productURL'])
                     if st.button("Get Item", key=f"item_{idx}", type="primary"):
-                        webbrowser.open(row['productURL'])
-                
+                        st.markdown(f'<a href="{row["productURL"]}" target="_blank"><button>Get Item</button></a>', unsafe_allow_html=True)
                 st.write("---")
     else:
         st.write("No results found. Please adjust your search criteria.")
